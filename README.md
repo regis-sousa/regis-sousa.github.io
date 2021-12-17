@@ -4,4 +4,4 @@
 
 ### Oi :)
 
-*Um dia isso aqui vai 'tá' mais 'bunitinho'.
+* Um dia isso aqui vai 'tá' mais 'bunitinho'.
