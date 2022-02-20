@@ -14,7 +14,7 @@
 
 <div class="wrapper">
     <div class="typing-demo">
-      Não repara a bagunça 🤧
+      Não repara a bagunça🤧
     </div>
 </div>
 
