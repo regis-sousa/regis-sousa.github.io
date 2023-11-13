@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Adicionando a tag meta viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@regissousa.me</title>
+    <title>Estamos em Obras</title>
     <style>
         body {
             display: flex;
@@ -19,15 +20,16 @@
         .container {
             text-align: center;
             position: relative;
+            /* Usando flexbox para criar um layout responsivo */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .icon-obras {
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
             font-size: 48px;
             color: #333;
+            margin-bottom: 20px;
         }
 
         .mensagem {
@@ -42,6 +44,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap; /* Permitindo que os ícones sejam quebrados em linhas se necessário */
         }
 
         .icon-instagram,
@@ -50,6 +53,22 @@
             color: #333;
             text-decoration: none;
             margin: 0 10px;
+        }
+
+        /* Usando media queries para alterar o tamanho da fonte em telas menores */
+        @media (max-width: 600px) {
+            .icon-obras {
+                font-size: 36px;
+            }
+
+            .mensagem {
+                font-size: 24px;
+            }
+
+            .icon-instagram,
+            .icon-email {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -70,9 +89,9 @@
                 @regissousa.me
             </a>
             
-            <a class="icon-email" href="mailto:contact@regissousa.me">
-                <img src="https://img.icons8.com/fluent/48/000000/email.png" alt="E-mail">
-                contact@regissousa.me
+            <a class="icon-email" href="mailto:regis@regissousa.me" target="_blank">
+                <img src="https://img.icons8.com/fluent/48/000000/email.png" alt="Email">
+                regis@regissousa.me
             </a>
         </div>
     </div>
