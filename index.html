@@ -1,100 +1,270 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <!-- Adicionando a tag meta viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@regissousa.me</title>
     <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+        * {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
 
         .container {
-            text-align: center;
-            position: relative;
-            /* Usando flexbox para criar um layout responsivo */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: space-between;
         }
 
-        .icon-obras {
-            font-size: 48px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .mensagem {
-            font-size: 36px;
+        .logo {
+            font-size: 24px;
             font-weight: bold;
-            font-family: 'Arial', sans-serif;
             color: #333;
-            margin-bottom: 20px;
         }
 
-        .icon-container {
+        .nav {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav li {
+            margin-left: 10px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav a:hover {
+            color: #555;
+        }
+
+        .profile {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            margin-left: 20px;
+        }
+
+        .profile-name {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .profile-title {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .profile-bio {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .skills {
+            margin-top: 40px;
+        }
+
+        .skills h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .skills li {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .projects {
+            margin-top: 40px;
+        }
+
+        .projects h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .projects ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            margin-top: 10px;
+        }
+
+        .projects li {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .projects img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .projects .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .projects .overlay:hover {
+            opacity: 1;
+        }
+
+        .projects .overlay p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .footer {
+            margin-top: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap; /* Permitindo que os ícones sejam quebrados em linhas se necessário */
         }
 
-        .icon-instagram,
-        .icon-email {
-            font-size: 36px;
+        .footer p {
+            font-size: 16px;
             color: #333;
-            text-decoration: none;
-            margin: 0 10px;
         }
 
-        /* Usando media queries para alterar o tamanho da fonte em telas menores */
-        @media (max-width: 600px) {
-            .icon-obras {
-                font-size: 36px;
-            }
+        .footer a {
+            margin-left: 5px;
+            text-decoration: none;
+            color: #333;
+        }
 
-            .mensagem {
-                font-size: 24px;
-            }
-
-            .icon-instagram,
-            .icon-email {
-                font-size: 24px;
-            }
+        .footer a:hover {
+            color: #555;
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <div class="icon-obras">
-            🚧🏗️🛑🚫 <!-- Substitua este emoji pelo ícone de obras desejado -->
+        <div class="header">
+            <div class="logo">Meu Portfólio</div>
+            <ul class="nav">
+                <li><a href="#profile">Perfil</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contatos</a></li>
+            </ul>
         </div>
-        
-        <div class="mensagem">
-            <p>PERA AÍ... ESTAMOS EM OBRAS</p>
+        <div class="profile" id="profile">
+            <img src="/img/regis-logo.jpg" alt="Foto de perfil" class="profile-image">
+            <div class="profile-info">
+                <div class="profile-name">régis sousa</div>
+                <div class="profile-title">Tecnólogo em Redes de Computadores | Graduando em Ciências Contábeis</div>
+                <div class="profile-bio">
+                    lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
+                </div>
+            </div>
         </div>
-        
-        <div class="icon-container">
-            <a class="icon-instagram" href="https://www.instagram.com/regissousa.me/" target="_blank">
-                <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram">
-                @regissousa.me
-            </a>
-            
-            <a class="icon-email" href="mailto:contact@regissousa.me" target="_blank">
-                <img src="https://img.icons8.com/fluent/48/000000/email.png" alt="Email">
-                contact@regissousa.me
-            </a>
+        <div class="skills" id="skills">
+            <h3>Minhas Habilidades</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+		<li>Python</li>               
+                <li>Git</li>
+              
+            </ul>
+        </div>
+        <div class="projects" id="projects">
+            <h3>Meus Projetos</h3>
+            <ul>
+                <li>
+                    <img src="project1.jpg" alt="Projeto 1">
+                    <div class="overlay">
+                        <p>Site de Notícias</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="project2.jpg" alt="Projeto 2">
+                    <div class="overlay">
+                        <p>Loja Virtual</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="project3.jpg" alt="Projeto 3">
+                    <div class="overlay">
+                        <p>Blog Pessoal</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="project4.jpg" alt="Projeto 4">
+                    <div class="overlay">
+                        <p>Agenda de Contatos</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="project5.jpg" alt="Projeto 5">
+                    <div class="overlay">
+                        <p>Calculadora de IMC</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="project6.jpg" alt="Projeto 6">
+                    <div class="overlay">
+                        <p>Jogo da Memória</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="footer" id="contact">
+            <p>Entre em contato comigo pelo <a href="mailto:contact@regissousa.me">e-mail</a> ou pelo <a href="https://www.linkedin.com/in/regissousa//">LinkedIn</a>.</p>
         </div>
     </div>
+    <script>
+        // Aqui você pode adicionar algum código JavaScript para adicionar interatividade ao seu site
+    </script>
 </body>
-
 </html>
